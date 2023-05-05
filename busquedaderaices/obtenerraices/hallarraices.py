@@ -1,8 +1,13 @@
 import metodos
+import scipy.optimize as sc
 
 TOLERANCIA_1 = 1e-5
 TOLERANCIA_2 = 1e-13
 SEMILLANR = 0.5
+
+def raizRealDeF(f):
+    raiz = sc.root(f.funcion, 0)
+    return raiz
 
 def hallarRaices(f, a, b, tolerancia):
     
