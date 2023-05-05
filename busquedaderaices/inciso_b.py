@@ -1,4 +1,4 @@
-import metodos
+import obtenerraices
 from funciones import f1
 from funciones import f2
 from funciones import f3
@@ -20,19 +20,6 @@ SEMILLANR = 0.5
 #para Newton-Raphson use semilla x0 = 0.5.
 #Mostrar en una tabla por cada m´etodo los resultados obtenidos (en caso que se obtengan
 #muchas iteraciones se pueden mostrar las primeras 5 y las ´ultimas 5).
-
-def hallarRaices(f, a, b, tolerancia):
-    
-    semilla = (a + b)/2
-    tablaDeResultadosPorMetodo = []
-    tablaDeResultadosPorMetodo.append(metodos.biseccion(f.funcion, a, b, tolerancia))
-    tablaDeResultadosPorMetodo.append(metodos.puntoFijo(f.g, semilla, tolerancia))
-    tablaDeResultadosPorMetodo.append(metodos.secante(f.funcion, a, b, tolerancia))
-    tablaDeResultadosPorMetodo.append(metodos.newtonraphson(f.funcion, f.fDerivada, SEMILLANR, tolerancia))
-    tablaDeResultadosPorMetodo.append(metodos.nrmodificado(f.funcion, f.fDerivada, f.fDerivadaSegunda, SEMILLANR, tolerancia))
-    nombresDeLosMetodos = ("Biseccion", "Punto fijo", "Secante", "Newton-Raphson","N-R modificado" )
-    tabla = list(zip(nombresDeLosMetodos, tablaDeResultadosPorMetodo))
-    return tabla
 
 def mostrarTabla(f, tolerancia, tablaDeResultados):
     
@@ -62,13 +49,13 @@ def mostrarTabla(f, tolerancia, tablaDeResultados):
 
 def resolver():
 
-    mostrarTabla(f1, TOLERANCIA_1, hallarRaices(f1, 0, 3, TOLERANCIA_1))
-    mostrarTabla(f1, TOLERANCIA_2, hallarRaices(f1, 0, 3, TOLERANCIA_2))
+    mostrarTabla(f1, TOLERANCIA_1, obtenerraices.hallarRaices(f1, 0, 3, TOLERANCIA_1))
+    mostrarTabla(f1, TOLERANCIA_2, obtenerraices.hallarRaices(f1, 0, 3, TOLERANCIA_2))
 
-    mostrarTabla(f2, TOLERANCIA_1, hallarRaices(f2, 0, 3, TOLERANCIA_1))
-    mostrarTabla(f2, TOLERANCIA_2, hallarRaices(f2, 0, 3, TOLERANCIA_2))
+    mostrarTabla(f2, TOLERANCIA_1, obtenerraices.hallarRaices(f2, 0, 3, TOLERANCIA_1))
+    mostrarTabla(f2, TOLERANCIA_2, obtenerraices.hallarRaices(f2, 0, 3, TOLERANCIA_2))
 
-    mostrarTabla(f3, TOLERANCIA_1, hallarRaices(f3, 0, 3, TOLERANCIA_1))
-    mostrarTabla(f3, TOLERANCIA_2, hallarRaices(f3, 0, 3, TOLERANCIA_2))
+    mostrarTabla(f3, TOLERANCIA_1, obtenerraices.hallarRaices(f3, 0, 3, TOLERANCIA_1))
+    mostrarTabla(f3, TOLERANCIA_2, obtenerraices.hallarRaices(f3, 0, 3, TOLERANCIA_2))
 
 
