@@ -8,9 +8,9 @@ def funcion(x):
     return x**3 - 19
 
 
-def fDerivada(x):
+def derivada(x):
     return 3*x**2
 
 
-def fDerivadaSegunda(x):
+def derivadaSegunda(x):
     return 6*x

@@ -1,7 +1,8 @@
-import obtenerraices
 from funciones import f1
 from funciones import f2
 from funciones import f3
+from obtenerraices import hallarraices
+
 
 TOLERANCIA_1 = 1e-5
 TOLERANCIA_2 = 1e-13
@@ -32,30 +33,31 @@ def mostrarTabla(f, tolerancia, tablaDeResultados):
         print("| n |  Valor de la raiz                                  ")
         print("---------------------------------------------------------")
         resultados = metodo[1]
-        i = 0
         if(len(resultados)) < 15:
-            for iteracion in resultados: #recorro cada iteracion del metodo determinado
-                print("|", i, "|", iteracion[i])
-                i += 1        
+            for resultado in resultados: #recorro cada iteracion del metodo determinado
+                print("|", resultado[0] ,"|",resultado[1])
         
         else:
-            for i in range(0, 5):
-                print("|", i, "|", iteracion[i])
-                i += 1        
-            for i in range(len(resultados) - 5, len(resultados)):
-                print("|", i, "|", iteracion[i])
-                i += 1  
+            for resultado in resultados[:5]:
+                print("|", resultado[0], "|", resultado[1])
+
+            for resultado in resultados[-5:]:
+                print("|", resultado[0] ,"|",resultado[1])
 
 
 def resolver():
 
-    mostrarTabla(f1, TOLERANCIA_1, obtenerraices.hallarRaices(f1, 0, 3, TOLERANCIA_1))
-    mostrarTabla(f1, TOLERANCIA_2, obtenerraices.hallarRaices(f1, 0, 3, TOLERANCIA_2))
+    mostrarTabla(f1, TOLERANCIA_1, hallarraices.hallarRaices(f1, 0, 3, TOLERANCIA_1))
+    print("\n\n")
+    mostrarTabla(f1, TOLERANCIA_2, hallarraices.hallarRaices(f1, 0, 3, TOLERANCIA_2))
+    print("\n\n\n")
+    mostrarTabla(f2, TOLERANCIA_1, hallarraices.hallarRaices(f2, 0, 3, TOLERANCIA_1))
+    print("\n\n")
+    mostrarTabla(f2, TOLERANCIA_2, hallarraices.hallarRaices(f2, 0, 3, TOLERANCIA_2))
+    print("\n\n\n")
+    mostrarTabla(f3, TOLERANCIA_1, hallarraices.hallarRaices(f3, 0, 3, TOLERANCIA_1))
+    print("\n\n")
+    mostrarTabla(f3, TOLERANCIA_2, hallarraices.hallarRaices(f3, 0, 3, TOLERANCIA_2))
 
-    mostrarTabla(f2, TOLERANCIA_1, obtenerraices.hallarRaices(f2, 0, 3, TOLERANCIA_1))
-    mostrarTabla(f2, TOLERANCIA_2, obtenerraices.hallarRaices(f2, 0, 3, TOLERANCIA_2))
-
-    mostrarTabla(f3, TOLERANCIA_1, obtenerraices.hallarRaices(f3, 0, 3, TOLERANCIA_1))
-    mostrarTabla(f3, TOLERANCIA_2, obtenerraices.hallarRaices(f3, 0, 3, TOLERANCIA_2))
-
+resolver()
 
