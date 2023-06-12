@@ -105,7 +105,7 @@ def secante(f, x0, x1, tolerancia):
     xn_1 = x0
     xn = x1
     i = 0
-    raices = [(i, [xn_1, xn])]
+    raices = [(i, 0)]
 
     while i < ITERACIONESMAXIMAS:
         # Se calcula el valor de la siguiente aproximación de la raíz.

@@ -1,6 +1,5 @@
 import math
 
-
 def g(x):
     return x - (x - 0.9)*math.e**(-4*(x-0.9)**2)
 

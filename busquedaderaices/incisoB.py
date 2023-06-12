@@ -55,9 +55,9 @@ def resolver():
     print("\n\n")
     mostrarTabla(f2, TOLERANCIA_2, hallarraices.hallarRaices(f2, 0, 3, TOLERANCIA_2))
     print("\n\n\n")
-    mostrarTabla(f3, TOLERANCIA_1, hallarraices.hallarRaices(f3, 0, 3, TOLERANCIA_1))
+    mostrarTabla(f3, TOLERANCIA_1, hallarraices.hallarRaices(f3, 0, 1.5, TOLERANCIA_1))
     print("\n\n")
-    mostrarTabla(f3, TOLERANCIA_2, hallarraices.hallarRaices(f3, 0, 3, TOLERANCIA_2))
+    mostrarTabla(f3, TOLERANCIA_2, hallarraices.hallarRaices(f3, 0, 1.5, TOLERANCIA_2))
 
 resolver()
 

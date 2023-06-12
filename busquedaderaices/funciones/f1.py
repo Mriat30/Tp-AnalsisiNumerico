@@ -3,7 +3,6 @@ import math
 def g(x):
     return math.cbrt(x + 19)
 
-
 def funcion(x):
     return x**3 - 19
 
@@ -14,3 +13,4 @@ def derivada(x):
 
 def derivadaSegunda(x):
     return 6*x
+
